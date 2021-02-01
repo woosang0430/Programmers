@@ -5,7 +5,7 @@ def solution(board, moves):
     for j in range(len(board)):
       temp.append(board[j][i])
     dolls_lst.append(temp)
-    # board에 2중 리스트 안의 값 index별 끼리 묶어 새로운(dolls_lst) 2중 리스트를 만든다.
+    # board에 2중 리스트 안에 index가 같은거 끼리 묶어 새로운(dolls_lst) 2중 리스트를 만든다.
   dolls_basket = []
   cnt = 0
   for i in moves: # moves를 dolls_lst의 인덱스로 접근
@@ -26,7 +26,10 @@ def solution(board, moves):
 
 print(solution([[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]], [1,5,3,5,1,2,1,4]))
 
-"""  4 3 1 1 3 2 4
+"""
+결과값
+4
+
 0 0 0 0 0
 0 0 1 0 3
 0 2 5 0 1
