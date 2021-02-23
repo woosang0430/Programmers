@@ -17,10 +17,10 @@ def solution(n,a,b):
                 cnt += 1
                 n //= 2
         elif a in first and b in first:
-        # 반으로 나눴는데 한쪽에 몰려있으면 n과 half를 반으로 나눠가며 1번 if문 안에 넣는다.
+        # 반으로 나눴는데 1 부터 half 몰려있으면 n과 half를 반으로 나눠가며 1번째 if문 안에 들어가도록한다.
             half, n = half//2, half
         elif a in second and b in second:
-        # half 부터 끝까지 있는 것은 a, b의 값에 half를 빼줘 1 ~ half까지로 만들어준다.
+        # half 부터 끝까지 범위에 있는 a, b의 값은 half를 빼줘 2번째 elif문에 들어가도록한다.
             a -= half
             b -= half
             half, n = half//2, half
@@ -30,7 +30,7 @@ def solution(n,a,b):
 def solution(n, a, b):
     cnt = 0
     #  a와 b가 출전하는 라운드를 2로 나눠어 갱신해준다.
-    while a != b:
+    while a != b: # a와 b의 라운드 수가 같으면 
         cnt += 1
         a = (a+1) // 2
         b = (b+1) // 2
