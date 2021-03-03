@@ -18,7 +18,7 @@ for i in range(1, len(land)):
         lst = []
 print(max(land[-1]))
 
-# 다른 사람 풀이 3 효율성 값
+# 다른 사람 풀이 3 효율성 갑d
 for i in range(1, len(land)):
     for j in range(4):
         # 중복되는 인덱스를 뺀 리스트를 만들고 그중 제일 높은 수를 더해준다.
