@@ -29,8 +29,8 @@ def solution(land):
     i = 1
     
     while i != len(land):
+        # 중복되는 인덱스를 제외한 행의 제일 큰값만 저장
         max_value = max(land[i])
-        
         max_idx = land[i].index(max_value)
         
         if idx == max_idx:
