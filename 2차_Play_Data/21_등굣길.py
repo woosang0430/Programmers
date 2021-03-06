@@ -34,5 +34,50 @@ for y in range(1, n+1):
         else:
             map_arr[y][x] = map_arr[y-1][x] + map_arr[y][x-1]
 # 목적지는 위와 왼쪽값을 더해준다.
-result = map_arr[n-1][m] + map_arr[n][m-1]
+result = (map_arr[n-1][m] + map_arr[n][m-1]) % 1000000007
 print(result)
+
+# 다른 분 풀이1
+m, n = 4, 3
+puddles = [[2,2]]
+
+answer = 0
+route_map = [[0]*m for i in range(n)]
+memo = [[0]*m for i in range(n)]
+for p in puddles:
+    route_map[p[1]-1][p[0]-1] = 1
+memo[0][0] = 1
+for i in range(n):
+    for j in range(m):
+        if i == 0 and j == 0:
+            continue
+        if route_map[i][j] == 1:
+            memo[i][j] = 0
+        elif i == 0:
+            memo[i][j] = memo[i][j-1]
+        elif j == 0:
+            memo[i][j] = memo[i-1][j]
+        else:
+            memo[i][j] = memo[i-1][j] + memo[i][j-1]
+print(memo)
+answer = memo[n-1][m-1]
+print(answer)
+
+# 다른 분 풀이 2
+def solution(m, n, puddles):
+    answer = 0
+    info = dict([((2, 1), 1), ((1, 2), 1)]) # 초기 시작 값
+    for puddle in puddles: # 웅덩이 좌표 가져오기
+        info[tuple(puddle)] = 0 
+        # key가 웅덩이 좌표인 value를 0으로 설정
+
+    def func(m, n): # 최단 경로 재귀 함수
+        if m < 1 or n < 1:
+            return 0
+        if (m, n) in info: # info에 key값이 (m, n)가 있으면
+            return info[(m, n)] # 키 값에 대비되는 값을 반환
+        # setdefault 사용
+        # (m, n)이 존재하면 (m, n)을 반환, 아니면 2번째 인스턴스 반환
+        # 2번째 인스턴스 == 재귀 함수
+        return info.setdefault((m, n), func(m-1, n) + func(m, n-1))
+    return func(m, n) % 1000000007
