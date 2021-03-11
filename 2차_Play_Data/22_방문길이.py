@@ -34,7 +34,7 @@ def solution(dirs):
 print(solution('LULLLLLLU'))
 
 # 다른 사람 코드
-def solution(dirs):
+def solution1(dirs):
     answer = 0
     dx = {"U" : 0, "D" : 0, "R" : 1, "L" : -1}
     dy = {"U" : -1, "D" : 1, "R" : 0, "L" : 0}
@@ -61,7 +61,7 @@ def solution(dirs):
 print(solution("LULLLLLLU"))
 
 ## 최종 나의 코드
-def solution(dirs):
+def solution2(dirs):
     nodes = set()
     y, x = 0, 0
     dy = {"U":-1, "L":0, "D":1, "R":0}

@@ -21,7 +21,7 @@ def solution(bridge_length, weight, truck_weights):
   
   if len(bridge_on_truck) != 0:
     time += bridge_length + (len(bridge_on_truck) - 1)
-  return time += 1
+  return time + 1
 ######################################################################
 bridge_length = 5
 weight = 5
@@ -37,6 +37,7 @@ from collections import deque
 truck_weights = deque(truck_weights)
 bridge = [0 for _ in range(bridge_length)]
 bridge = deque(bridge)
+
 # 다리길이만큼 0으로 초기화
 
 time = 0
