@@ -65,7 +65,6 @@ print(answer)
 
 # 다른 분 풀이 2
 def solution(m, n, puddles):
-    answer = 0
     info = dict([((2, 1), 1), ((1, 2), 1)]) # 초기 시작 값
     for puddle in puddles: # 웅덩이 좌표 가져오기
         info[tuple(puddle)] = 0 
