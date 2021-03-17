@@ -24,26 +24,6 @@ for i in range(1, len(costs)):
 
 print(node_cost)
 ########################################################3
-n = 4
-costs = [[0,1,1],[0,2,2],[1,2,5],[1,3,1],[2,3,8]]
-
-costs.sort(key=lambda x: x[-1])
-nodes = [costs[0][0], costs[0][1]]
-node_cost = costs[0][2]
-
-for i in range(1, len(costs)):
-    node1, node2, cost = costs[i]
-    if node1 in nodes and node2 in nodes:
-        continue
-    
-    if node1 in nodes:
-        nodes.append(node2)
-    else:
-        nodes.append(node1)
-    node_cost += cost
-
-print(node_cost)
-#####################################################################################
 parent = dict()
 rank = dict()
 
