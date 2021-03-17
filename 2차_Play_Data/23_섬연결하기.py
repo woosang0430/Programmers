@@ -2,27 +2,27 @@
 # 둘다 없으면 연결이 안된것
 # 리스트에 연결된 것을 담아 주기
 
-# n = 4
-# costs = [[0,1,1],[0,2,2],[1,2,5],[1,3,1],[2,3,8]]
-# # costs = [[1,2,13],[1,3,5],[2,4,9],[3,4,15],[3,5,3],[4,5,1],[4,6,7],[5,6,2]]
+n = 4
+costs = [[0,1,1],[0,2,2],[1,2,5],[1,3,1],[2,3,8]]
+# costs = [[1,2,13],[1,3,5],[2,4,9],[3,4,15],[3,5,3],[4,5,1],[4,6,7],[5,6,2]]
 
-# costs.sort(key=lambda x: x[-1]) # 비용 기준으로 오름차순 정렬
-# nodes = [costs[0][0], costs[0][1]] # 제일 싼 비용의 다리 넣고 비용 저장
-# node_cost = costs[0][2]
+costs.sort(key=lambda x: x[-1]) # 비용 기준으로 오름차순 정렬
+nodes = [costs[0][0], costs[0][1]] # 제일 싼 비용의 다리 넣고 비용 저장
+node_cost = costs[0][2]
 
-# for i in range(1, len(costs)):
-#     if costs[i][0] in nodes and costs[i][1] in nodes:
-#         # 이미 지어진 다리면 pass
-#         continue
-#     # 한개의 도로만 연결되어 있으면 연결되지 않는 쪽 다리 만들기
-#     if costs[i][0] in nodes:
-#         nodes.append(costs[i][1])
-#     else:
-#         nodes.append(costs[i][0])
-#     # 비용 저장
-#     node_cost += costs[i][2]
+for i in range(1, len(costs)):
+    if costs[i][0] in nodes and costs[i][1] in nodes:
+        # 이미 지어진 다리면 pass
+        continue
+    # 한개의 도로만 연결되어 있으면 연결되지 않는 쪽 다리 만들기
+    if costs[i][0] in nodes:
+        nodes.append(costs[i][1])
+    else:
+        nodes.append(costs[i][0])
+    # 비용 저장
+    node_cost += costs[i][2]
 
-# print(node_cost)
+print(node_cost)
 ########################################################3
 n = 4
 costs = [[0,1,1],[0,2,2],[1,2,5],[1,3,1],[2,3,8]]
