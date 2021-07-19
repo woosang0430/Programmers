@@ -13,5 +13,4 @@ for i in range(2, max_num+1):
             visit_list[compare_num] = False
             compare_num += i
 
-
 print(len(result_list))
