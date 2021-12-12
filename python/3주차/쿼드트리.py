@@ -1,8 +1,6 @@
 def solution(y1:int, x1:int, n:int) -> None:
   global answer
 
-  if not n:
-    n = 1
   escape = False
   for y in range(y1, y1+n):
     if escape:
