@@ -23,7 +23,7 @@ function solution(lottos, win_nums) {
         }
     }
     
-    var ret = [[lnksgradesmin_count+unknown], grades[min_count]];
+    var ret = [grades[min_count+unknown], grades[min_count]];
     
     return ret;
 }
